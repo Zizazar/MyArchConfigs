@@ -31,9 +31,9 @@
         "network",
         "memory",
         "cpu",
-        "temperature",
         "tray",
-        "custom/clock"
+        "clock",
+        "backlight"
     ],
 
 
@@ -91,7 +91,7 @@
         "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
         "format-ethernet": " {ipaddr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}"
+        "tooltip-format": "{ifname}: {bandwidthTotalBytes}"
     },
 
     "hyprland/workspaces": {
@@ -113,7 +113,7 @@
 	}
 },
     "hyprland/window": {
-    "max-length": 200,
+    "max-length": 100,
     "separate-outputs": true
 },
 
@@ -134,30 +134,25 @@
         },
         "on-click": "pavucontrol"
     },
-
-    "temperature": {
-      "critical-threshold": 80,
-      "interval": 10,
-      "format": "{icon}  {temperatureC}°C",
-      "format-icons": [
-          "", // Icon: temperature-empty
-          "", // Icon: temperature-quarter
-          "", // Icon: temperature-half
-          "", // Icon: temperature-three-quarters
-          ""  // Icon: temperature-full
-      ],
-      "tooltip": true
+    "upower": {
+        "native-path": "/org/bluez/hci0/dev_85_42_36_51_B4_E7",
+        "icon-size": 20,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
+    },        
+    "user": {
+        "format": "{user} (up {work_H} hours ↑)",
+        "interval": 60,
     },
-
     "tray": {
         "icon-size": 15,
         "spacing": 5
     },
     "custom/clock": {
-        "exec": "date '+%H:%M:%S'",
+        "exec": "date '+%H:%M'",
         "format": "{}",
-        "interval": "1",
-        "on-click": "date '+%H:%M'"
+        "interval": "10",
     },
 
 }

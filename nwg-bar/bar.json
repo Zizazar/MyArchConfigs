@@ -18,5 +18,10 @@
     "label": "Shutdown",
     "exec": "systemctl -i poweroff",
     "icon": "/usr/share/nwg-bar/images/system-shutdown.svg"
+  },
+  {
+    "label": "Windows",
+    "exec": "/usr/share/nwg-bar/windows.sh",
+    "icon": "/usr/share/nwg-bar/images/windows.svg"
   }
 ]
